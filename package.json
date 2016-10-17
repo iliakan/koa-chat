@@ -17,7 +17,8 @@
     "trace": "*",
     "stack-chain": "*",
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "co-mocha": "*"
   },
   "dependencies": {
     "co-busboy": "^1",
