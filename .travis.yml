@@ -5,5 +5,9 @@ cache:
   directories:
   - node_modules
 deploy:
+
+  provider: heroku
+  app: # different branches push to different deploy targets
+    master: koa-chat
   api_key:
     secure: TYJtn6+oEIXxAdq90xpcP1SkExPSTbV/BTjm4CKSBxxWaNsb8hAN++jftZcUxHUQZ2MgPm9Fkww2zl7mvXidgSrKFoMrim/nAgoP+LRq8GL0CPVQtnnCHVWqy78fqWOXQPhpjY004OFYo8HDRZqe34uL5MUoZBMzZbc11RTIOWZ5cL2KSPxh7Rfug0CuDhWoPcxLYd3r+QThwCfiaQq0/ly0JGCHXRUwFWbUWPAKSpWDjvHFq28X9wvizJgMKA67rMQIfnHqJMh+tBTuIdDKMVOCWVvledmKtImL7V+JuX1Mo8l+6jJW4+tow7LUOdbpK4F97gXdKaervehIst6A1RFaT+QPVYvson8my+KLkGFoQmUOM/Nw75/57qV1iXa1JMPzTjqycJvsDKipaUEda/v4l+dmJOHrkfGo08WY+iKAm++8y1TP+aAGI8jH+tPl7Vf756vgTlw0FDbne/dU7LiEUx1QQyKjM+9tmlJlgeyoCcawBOmffbBZar3+n+bZ194q7x+R6KLb8Zs9fHffoJsdI81v3iZZSFqOYjvl3FCVwnKN0FGEm5cRD0w0lDlL7XDWrFPY6iatnw7ct1D/IY+gwlfShDXuOT+dCRjj3yzxQvkUmypF9F7nZcsHxBjlZMOP/Xr6gyQL0diPbZJsqfynnDdLwkRuathTlnz4ZAA=
