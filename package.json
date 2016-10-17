@@ -8,14 +8,16 @@
     "node": "6"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha"
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha"
   },
   "author": "Ilya Kantor, Sergey Zelenov",
   "license": "ISC",
   "devDependencies": {
     "clarify": "*",
     "trace": "*",
-    "stack-chain": "*"
+    "stack-chain": "*",
+    "mocha": "*",
+    "should": "*"
   },
   "dependencies": {
     "co-busboy": "^1",
