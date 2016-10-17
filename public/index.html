@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<p class="lead">Добро пожаловать в чат!</p>
+
+<form id="publish" class="form-inline">
+  <input type="text" name="message"/>
+  <input type="submit" class="btn btn-primary" value="Отправить"/>
+</form>
+
+<ul id="messages"></ul>
+
+<script>
+
+  publish.onsubmit = function() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "/publish", true);
+
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+    xhr.send(JSON.stringify({message: this.elements.message.value}));
+
+    this.elements.message.value = '';
+
+    return false;
+  };
+
+  subscribe();
+
+  function subscribe() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "/subscribe?r=" + Math.random(), true);
+
+    xhr.onload = function() {
+      if(xhr.status != 200) return this.onerror();
+      
+      var li = document.createElement('li');
+      li.textContent = this.responseText;
+      messages.appendChild(li);
+
+      subscribe();
+    };
+
+    xhr.onerror = xhr.onabort = function() {
+      setTimeout(subscribe, 500);
+    };
+
+    xhr.send();
+  }
+
+
+</script>
+</body>
+</html>
